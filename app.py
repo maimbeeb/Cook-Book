@@ -8,7 +8,7 @@ from datetime import datetime  # DATETIME
 app = Flask(__name__)
 
 # MONGO DB CONFIG
-app.config["MONGO_URI"] = "mongodb://localhost:27017/cookbook"
+app.config["MONGO_URI"] = "mongodb://18.188.85.90:27098/cookbook"
 mongo = PyMongo(app)
 
 # APP ROOT
