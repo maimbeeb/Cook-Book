@@ -67,3 +67,144 @@ body {
   padding-bottom: 6px;
   padding-left: 10px;
 }
+
+.custom-modal-title {
+  color: #eef2d8;
+}
+
+.custom-modal-content {
+  border: #0b5556;
+}
+
+.custom-modal-header {
+  background: url("../images/bg-green.jpg");
+  border: #0b5556;
+}
+
+.custom-modal-close {
+  color: #eef2d8;
+}
+
+.close-btn {
+  text-transform: uppercase;
+  color: #eef2d8;
+}
+
+.save-recipe {
+  background: #0b5556;
+  color: #eef2d8;
+  text-transform: uppercase;
+}
+
+.modal-body .form-group label {
+  color: #0b5556;
+  text-transform: uppercase;
+}
+
+.recipe-info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: url("../images/bg-green.jpg");
+  color: #eef2d8;
+  padding: 5px 0;
+}
+
+.recipe-info .recipe-img {
+  width: 100%;
+}
+
+.recipe-info .ingredients-tab {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #327882;
+}
+
+.recipe-info .ingredients-tab li.active {
+  border-bottom: #f93c06 solid 3px;
+}
+
+.recipe-info .ingredients-tab li {
+  display: inline-block;
+  padding: 15px 20px;
+}
+
+.recipe-info .ingredients-tab {
+  list-style: none;
+}
+
+.recipe-info .ingredients-tab li.active a {
+  color: rgba(255, 255, 255, 1);
+  outline: none;
+}
+
+.recipe-info .ingredients-tab li a:link {
+  text-decoration: none;
+}
+
+.recipe-info .ingredients-tab li a {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: transparent solid 3px;
+}
+
+.recipe-info .custom-tab {
+  background: #0b5556;
+}
+
+.recipe-info .custom-tab li {
+  width: 50%;
+}
+
+.recipe-info .custom-tab li a {
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+}
+.recipe-info .custom-tab li .nav-link.active {
+  color: #0b5556;
+}
+
+.recipe-info .recipe-title {
+  font-size: 18px;
+  color: #0b5556;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.recipe-info .chef-img {
+  padding-bottom: 3px;
+}
+
+.recipe-info .chef-name {
+  color: #0b5556;
+}
+
+.recipe-info .clock-img {
+  width: 18px;
+  padding-bottom: 3px;
+  margin-left: 7px;
+}
+
+.recipe-info .duration {
+  color: #0b5556;
+}
+
+.recipe-info .description {
+  margin-top: 10px;
+  color: #0b5556;
+  text-align: left;
+}
+
+.recipe-info .back-btn {
+  text-align: right;
+  display: block;
+  padding: 0;
+}
+
+.recipe-info .back-btn button {
+  background: #eef2d8;
+  color: #0b5556;
+  text-transform: uppercase;
+  font-size: 14px;
+}
