@@ -48,9 +48,7 @@ def search():
     category = ["appetizers, beverages", "soups, salads", "vegatables",
                 "main dishes", "breads, rolls", "desserts", "miscellaneous"]
     
-        return render_template('index.html', cuisine=cuisine, category=category)
-    else:
-        return redirect("/")    
+    return render_template('index.html', cuisine=cuisine, category=category)   
 
 
 if __name__ == '__main__':
