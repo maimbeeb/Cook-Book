@@ -13,8 +13,14 @@ mongo = PyMongo(app)
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+
 @app.route('/')
 def home():
+    cuisine = ["american", "chinese", "continental", "cuban", "french", "greek", "indian", "indonesian", "italian", "japanese",
+               "korean", "lebanese", "malaysian", "mexican", "pakistani", "russian", "singapore", "spanish", "thai", "tibetan", "vietnamese"]
+
+    category = ["appetizers, beverages", "soups, salads", "vegatables",
+                "main dishes", "breads, rolls", "desserts", "miscellaneous"]
     return render_template('index.html')
 @app.route('/recipe/')
 def recipe():
