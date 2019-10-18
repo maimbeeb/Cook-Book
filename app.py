@@ -66,5 +66,38 @@ def remove():
     mongo.db.recipe.remove({"_id": ObjectId(key)})
     return redirect("/")
 
+@app.route('/addRecipe', methods=['POST'])
+def addRecipe():
+    target = os.path.join(APP_ROOT, 'static/recipe/')  # FOLDER PATH
+    if not os.path.isdir(target):
+        os.mkdir(target)     # CREATE FOLDER IF NOT EXITS
+    if request.method == 'POST':
+        if request.files['image']:
+            upload = request.files['image']
+            filename = secure_filename(upload.filename)
+            now = datetime.now()
+            timestamp = datetime.timestamp(now)
+            rename_img = str(timestamp) + "_" + filename
+            destination = "/".join([target, rename_img])
+            upload.save(destination)
+        else:
+            rename_img = ""
+
+    # FORM VALUES RELATED TO RECIPE
+    recipe_name = request.values.get("recipe")
+    chef = request.values.get("chef")
+    description = request.values.get("description")
+    ingredients = request.values.get("ingredients")
+    preparation = request.values.get("preparation")
+    tools = request.values.get("tools")
+    category = request.values.get("category")
+    cuisine = request.values.get("cuisine")
+    duration = request.values.get("duration")
+
+    # INSERT RECIPE DETAILS IN COLLECTION
+    mongo.db.recipe.insert({"recipe": recipe_name, "chef": chef, "description": description, "ingredients": ingredients, "preparation": preparation,
+                            "tools": tools, "category": category, "cuisine": cuisine, "duration": duration, "created_date": datetime.now(), "image": rename_img})
+    return redirect("/")    
+
 if __name__ == '__main__':
     app.run(debug=True)
