@@ -21,9 +21,14 @@ def home():
 
     category = ["appetizers, beverages", "soups, salads", "vegatables",
                 "main dishes", "breads, rolls", "desserts", "miscellaneous"]
-    return render_template('index.html')
+    recipes = mongo.db.recipe.find()
+    return render_template('index.html', recipes=recipes, cuisine=cuisine, category=category)
+
+
 @app.route('/recipe/')
 def recipe():
-    return render_template('recipe.html')    
+    return render_template('recipe.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
