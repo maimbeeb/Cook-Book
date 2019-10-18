@@ -97,7 +97,27 @@ def addRecipe():
     # INSERT RECIPE DETAILS IN COLLECTION
     mongo.db.recipe.insert({"recipe": recipe_name, "chef": chef, "description": description, "ingredients": ingredients, "preparation": preparation,
                             "tools": tools, "category": category, "cuisine": cuisine, "duration": duration, "created_date": datetime.now(), "image": rename_img})
-    return redirect("/")    
+    return redirect("/")
+
+@app.route('/updateRecipe', methods=['POST'])
+def updateRecipe():
+
+    # FORM VALUES RELATED TO RECIPE
+    rename_img = request.values.get("imageKey")
+    recipe_name = request.values.get("recipe")
+    chef = request.values.get("chef")
+    description = request.values.get("description")
+    ingredients = request.values.get("ingredients")
+    preparation = request.values.get("preparation")
+    tools = request.values.get("tools")
+    category = request.values.get("category")
+    cuisine = request.values.get("cuisine")
+    duration = request.values.get("duration")
+
+    # UPDATE RECIPE DETAILS IN COLLECTION
+    mongo.db.recipe.update({"_id": ObjectId(request.values.get("id"))}, {"$set": {"recipe": recipe_name, "chef": chef, "description": description, "ingredients": ingredients,
+                                                                                  "preparation": preparation, "tools": tools, "category": category, "cuisine": cuisine, "duration": duration, "created_date": datetime.now(), "image": rename_img}})
+    return redirect("/")        
 
 if __name__ == '__main__':
     app.run(debug=True)
