@@ -1,0 +1,67 @@
+@media (min-width: 767px) {
+  .cook-book-head {
+    padding-right: 0;
+  }
+  .note-column {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .add-text {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .cook-book-head {
+    padding: 0;
+  }
+
+  .head-recipe-title {
+    font-size: 1.3em;
+  }
+
+  .recipe-info .category {
+    margin-bottom: 1em;
+  }
+  
+  .recipe-info .cuisine {
+    margin-bottom: 1em;
+  }
+
+  .recipe-info .required-tools {
+    margin-bottom: 1em;
+  }
+
+  .recipe-info .description {
+    margin-bottom: 1em;
+  }
+
+  .right-tab {
+    margin-bottom: 1em;
+  }
+  .recipe-info .custom-tab li a {
+    font-size: 0.95em;
+  }
+  .search-outer-column {
+    padding: 0;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  .search-outer-column {
+    padding: 0;
+  }
+  .search-inner-column {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 1368px) {
+  .search-outer-column {
+    padding: 0;
+  }
+  .search-inner-column {
+    padding: 0;
+  }
+}

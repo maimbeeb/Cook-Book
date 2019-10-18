@@ -1,43 +1,52 @@
+<!-- LAYOUT HTML PAGE START -->
 <!DOCTYPE html>
 <html>
+  <!-- HTML HEAD TAG START -->
   <head>
-    <!-- Required meta tags -->
+    <!-- REQUIRED META TAGS -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- BOOTSTRAP CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+
+    <!-- RESPONSIVE CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/responsive.css') }}"
+    />
+
+    <!-- OPTIONAL JAVASCRIPT -->
+    <!-- JQUERY FIRST, THEN Popper.js, THEN Bootstrap JS, THEN custom.js -->
     <script src="{{ url_for('static', filename='js/jquery-3.3.1.slim.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <title>Cook-Book</title>
-    <script>
-      $(document).ready(function() {
-        $(".card-text").each(function(index, value) {
-          let text;
-          if (value.innerHTML.length > 110) {
-            text = value.innerHTML.substr(0, 110) + "...";
-          } else {
-            text = value.innerHTML;
-          }
-          value.innerHTML = text;
-        });
-      });
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
-      function addRecipe() {
-        $("#exampleModal").modal("show");
-      }
-    </script>
+    <!-- To DEFINE PAGE TITLE BELOW -->
+    <title>Cook-Book</title>
   </head>
+  <!-- HTML HEAD TAG END -->
+
+  <!-- HTML BODY TAG START -->
   <body>
+    <!-- Page CONTAINER BLOCK -->
     <div class="container">
       {% block content %} {% endblock %}
     </div>
   </body>
+  <!-- HTML BODY TAG END -->
 </html>
+<!-- LAYOUT HTML PAGE END -->
