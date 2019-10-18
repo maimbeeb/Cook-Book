@@ -1,0 +1,247 @@
+{% extends "layout.html" %} {% block content %}
+<div class="row mt-5">
+  <div class="col-sm-12 pr-0">
+    <h2 class="head-title"><img src="static/images/book.png" />Cook Book</h2>
+  </div>
+  <div class="col-sm-8">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card custom-card">
+          <a href="{{ url_for('recipe') }}"
+            ><img src="static/images/pizza.jpg" class="card-img-top" alt="..."
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              ><span
+                ><img src="static/images/clock.png" class="clock-img" /> 1hour
+                30mins</span
+              >
+              <span class="chef"
+                ><img src="static/images/chef.png" class="chef-img" /> Mad
+                Rockatansky</span
+              ></small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card custom-card">
+          <a href="{{ url_for('recipe') }}"
+            ><img src="static/images/pizza.jpg" class="card-img-top" alt="..."
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This card has supporting text below as a natural lead-in to
+              additional content.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              ><span
+                ><img src="static/images/clock.png" class="clock-img" /> 1hour
+                30mins</span
+              >
+              <span class="chef"
+                ><img src="static/images/chef.png" class="chef-img" /> Mad
+                Rockatansky</span
+              ></small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="mb-3"></div>
+      <div class="col-sm-6">
+        <div class="card custom-card">
+          <a href="{{ url_for('recipe') }}"
+            ><img src="static/images/pizza.jpg" class="card-img-top" alt="..."
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              ><span
+                ><img src="static/images/clock.png" class="clock-img" /> 1hour
+                30mins</span
+              >
+              <span class="chef"
+                ><img src="static/images/chef.png" class="chef-img" /> Mad
+                Rockatansky</span
+              ></small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card custom-card">
+          <a href="{{ url_for('recipe') }}"
+            ><img src="static/images/pizza.jpg" class="card-img-top" alt="..."
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This card has supporting text below as a natural lead-in to
+              additional content.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              ><span
+                ><img src="static/images/clock.png" class="clock-img" /> 1hour
+                30mins</span
+              >
+              <span class="chef"
+                ><img src="static/images/chef.png" class="chef-img" /> Mad
+                Rockatansky</span
+              ></small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 bg-green">
+    <div class="add-text">Add your new receipes here!</div>
+    <div class="recipes-btn-column">
+      <button class="btn btn-default add-recipe-btn" onclick="addRecipe()">
+        Add Recipe
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header custom-modal-header">
+        <h5 class="modal-title custom-modal-title" id="exampleModalLabel">
+          ADD RECIPE
+        </h5>
+        <button
+          type="button"
+          class="close custom-modal-close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipe-name">Recipe Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipe-name"
+                placeholder="Enter your Recipe..."
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="chef">Chef</label>
+              <input
+                type="text"
+                class="form-control"
+                id="chef"
+                placeholder="Chef"
+              />
+            </div>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="image" />
+            <label class="custom-file-label" for="image">Choose file</label>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              placeholder="Enter Description..."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ingredients">Ingredients</label>
+            <textarea
+              class="form-control"
+              id="ingredients"
+              placeholder="Enter Ingredients..."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="preparation-steps">Preparation Steps</label>
+            <textarea
+              class="form-control"
+              id="preparation-steps"
+              placeholder="How to cook..."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="required-tools">Required Tools</label>
+            <textarea
+              class="form-control"
+              id="required-tools"
+              placeholder="Required Tools"
+            ></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="duration">Duration</label>
+              <input
+                type="text"
+                class="form-control"
+                id="duration"
+                placeholder="How many hours it will take..."
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="cuisine">Cuisine</label>
+              <select id="cuisine" class="form-control custom-select">
+                <option selected>Choose...</option>
+                <option>Indian</option>
+                <option>Italian</option>
+                <option>Cajun</option>
+                <option>Soul</option>
+                <option>Thai</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary close-btn"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-default save-recipe">
+          Save Recipe
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
