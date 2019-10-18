@@ -55,6 +55,16 @@ def search():
     else:
         return redirect("/")   
 
+@app.route("/remove")
+def remove():
+    # DELETING A RECIPE WITH VARIOUS REFERENCES
+
+    # RECIPE OBJECT KEY
+    key = request.values.get("_id")
+
+    # REMOVE DATA FROM COLLECTION
+    mongo.db.recipe.remove({"_id": ObjectId(key)})
+    return redirect("/")
 
 if __name__ == '__main__':
     app.run(debug=True)
