@@ -1,121 +1,128 @@
-{% extends "layout.html" %} {% block content %}
-<div class="row mt-5">
-  <div class="col-sm-12 pr-0">
-    <h2 class="head-title"><img src="static/images/book.png" />Cook Book</h2>
-  </div>
-  <div class="col-sm-8">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card custom-card">
-          <a href="{{ url_for('recipe') }}"
-            ><img src="static/images/pizza.jpg" class="card-img-top" alt="..."
-          /></a>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"
-              ><span
-                ><img src="static/images/clock.png" class="clock-img" /> 1hour
-                30mins</span
-              >
-              <span class="chef"
-                ><img src="static/images/chef.png" class="chef-img" /> Mad
-                Rockatansky</span
-              ></small
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card custom-card">
-          <a href="{{ url_for('recipe') }}"
-            ><img src="static/images/pizza.jpg" class="card-img-top" alt="..."
-          /></a>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"
-              ><span
-                ><img src="static/images/clock.png" class="clock-img" /> 1hour
-                30mins</span
-              >
-              <span class="chef"
-                ><img src="static/images/chef.png" class="chef-img" /> Mad
-                Rockatansky</span
-              ></small
-            >
-          </div>
-        </div>
-      </div>
-      <div class="mb-3"></div>
-      <div class="col-sm-6">
-        <div class="card custom-card">
-          <a href="{{ url_for('recipe') }}"
-            ><img src="static/images/pizza.jpg" class="card-img-top" alt="..."
-          /></a>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"
-              ><span
-                ><img src="static/images/clock.png" class="clock-img" /> 1hour
-                30mins</span
-              >
-              <span class="chef"
-                ><img src="static/images/chef.png" class="chef-img" /> Mad
-                Rockatansky</span
-              ></small
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card custom-card">
-          <a href="{{ url_for('recipe') }}"
-            ><img src="static/images/pizza.jpg" class="card-img-top" alt="..."
-          /></a>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"
-              ><span
-                ><img src="static/images/clock.png" class="clock-img" /> 1hour
-                30mins</span
-              >
-              <span class="chef"
-                ><img src="static/images/chef.png" class="chef-img" /> Mad
-                Rockatansky</span
-              ></small
-            >
-          </div>
-        </div>
-      </div>
+<!-- INCLUDE LAYOUT HTML PART -->
+{% extends "layout.html" %}
+
+<!-- PYTHON BLOCK START -->
+{% block content %}
+<div class="row">
+  <div class="col-sm-12 note-column">
+    <div
+      class="alert alert-success alert-dismissible fade show mt-3"
+      role="alert"
+    >
+      <strong>NOTE!</strong> You could add recipes to click ADD RECIPE button
+      and then fill up recipe details then save recipe. You could also view
+      individual recipe by clicking recipe images.
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
   </div>
-  <div class="col-sm-4 bg-green">
-    <div class="add-text">Add your new receipes here!</div>
+</div>
+<div class="row mt-3">
+  <div class="col-sm-12 cook-book-head">
+    <h2 class="head-title">
+      <img src="static/images/book.png" alt="cook-book-logo" />Cook Book
+    </h2>
+  </div>
+  <!-- SEARCH FUNCTIONALITY START -->
+  <div class="col-lg-12 search-outer-column">
+    <div class="col-lg-4 col-md-12 search-inner-column float-right">
+      <form class="needs-validation" novalidate method="POST" action="/search">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="recipe"
+            value="{{ recipe_name }}"
+            placeholder="Recipe name"
+            aria-label="Recipe name"
+            required
+          />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary search-btn" type="submit">
+              Search
+            </button>
+            <button
+              class="btn btn-outline-secondary search-btn"
+              onclick="window.location.href='/'"
+              type="button"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- SEARCH FUNCTIONALITY END -->
+  <div class="clearfix"></div>
+  <div class="col-md-8 col-xs-12 order-2 order-sm-1">
+    <div class="row">
+      <!-- CONDITION END -->
+
+      <!-- CHECK IF RECIPES EXISTS PART -->
+      {% if recipes[0] %}
+
+      <!-- FOR LOOP START -->
+      {% for recipe in recipes %}
+      <div class="col-sm-6 col-md-12 col-lg-6">
+        <div class="card custom-card">
+          <a href="{{ url_for('recipe', recip=recipe['_id']) }}"
+            ><img
+              src="../static/recipe/{{ recipe['image'] }}"
+              class="card-img-top custom-card-img-top"
+              alt="{{ recipe['image'] }}"
+          /></a>
+          <div class="card-body custom-card-body">
+            <h5 class="card-title">{{ recipe["recipe"] }}</h5>
+            <p class="card-text">
+              {{ recipe["description"] }}
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              ><span
+                ><img
+                  src="static/images/clock.png"
+                  class="clock-img"
+                  alt="clock-img"
+                />
+                {{ recipe["duration"] }}</span
+              >
+              <span class="chef"
+                ><img
+                  src="static/images/chef.png"
+                  class="chef-img"
+                  alt="chef-img"
+                />
+                {{ recipe["chef"] }}</span
+              ></small
+            >
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- FOR LOOP END -->
+
+      {% else %}
+      <!-- IF RECIPES NOT EXISTS PART -->
+      <div class="col-sm-12">
+        <h4 class="no-recipes">No Recipes in the List !!</h4>
+      </div>
+
+      {% endif %}
+      <!-- CONDITION END -->
+    </div>
+  </div>
+
+  <!-- ADD RECIPES SECTION -->
+  <div class="col-md-4 bg-green pb-3 order-sm-2 order-1">
+    <div class="add-text">Add your new recipes here!</div>
     <div class="recipes-btn-column">
       <button class="btn btn-default add-recipe-btn" onclick="addRecipe()">
         Add Recipe
@@ -123,7 +130,10 @@
     </div>
   </div>
 </div>
-<!-- Modal -->
+
+<!-- MODAL START -->
+
+<!-- TO ADD RECIPE RELATED ITEMS IN MODAL INPUTS -->
 <div
   class="modal fade"
   id="exampleModal"
@@ -134,21 +144,27 @@
 >
   <div class="modal-dialog" role="document">
     <div class="modal-content custom-modal-content">
-      <div class="modal-header custom-modal-header">
-        <h5 class="modal-title custom-modal-title" id="exampleModalLabel">
-          ADD RECIPE
-        </h5>
-        <button
-          type="button"
-          class="close custom-modal-close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
+      <form
+        class="needs-validation"
+        novalidate
+        method="POST"
+        action="/addRecipe"
+        enctype="multipart/form-data"
+      >
+        <div class="modal-header custom-modal-header">
+          <h5 class="modal-title custom-modal-title" id="exampleModalLabel">
+            ADD RECIPE
+          </h5>
+          <button
+            type="button"
+            class="close custom-modal-close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="recipe-name">Recipe Name</label>
@@ -156,7 +172,9 @@
                 type="text"
                 class="form-control"
                 id="recipe-name"
+                name="recipe"
                 placeholder="Enter your Recipe..."
+                required
               />
             </div>
             <div class="form-group col-md-6">
@@ -165,20 +183,30 @@
                 type="text"
                 class="form-control"
                 id="chef"
+                name="chef"
                 placeholder="Chef"
+                required
               />
             </div>
           </div>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="image" />
-            <label class="custom-file-label" for="image">Choose file</label>
+          <div class="form-group">
+            <label for="image">Choose file</label>
+            <input
+              type="file"
+              name="image"
+              class="form-control"
+              id="image"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="description">Description</label>
             <textarea
               class="form-control"
               id="description"
+              name="description"
               placeholder="Enter Description..."
+              required
             ></textarea>
           </div>
           <div class="form-group">
@@ -186,7 +214,9 @@
             <textarea
               class="form-control"
               id="ingredients"
+              name="ingredients"
               placeholder="Enter Ingredients..."
+              required
             ></textarea>
           </div>
           <div class="form-group">
@@ -194,7 +224,9 @@
             <textarea
               class="form-control"
               id="preparation-steps"
+              name="preparation"
               placeholder="How to cook..."
+              required
             ></textarea>
           </div>
           <div class="form-group">
@@ -202,8 +234,44 @@
             <textarea
               class="form-control"
               id="required-tools"
+              name="tools"
               placeholder="Required Tools"
+              required
             ></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="category">Category</label>
+              <select
+                id="category"
+                name="category"
+                class="form-control custom-select"
+                required
+              >
+                <option value="">SELECT CATEGORY</option>
+                <!-- CATEGORY LOOP START  -->
+                {% for x in category %}
+                <option value="{{ x }}">{{ x }}</option>
+                {% endfor %}
+                <!-- CATEGORY LOOP END  -->
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="cuisine">Cuisine</label>
+              <select
+                id="cuisine"
+                name="cuisine"
+                class="form-control custom-select"
+                required
+              >
+                <option value="">SELECT CUISINE</option>
+                <!-- CUISINE LOOP START  -->
+                {% for x in cuisine %}
+                <option value="{{ x }}">{{ x }}</option>
+                {% endfor %}
+                <!-- CUISINE LOOP END  -->
+              </select>
+            </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -212,36 +280,32 @@
                 type="text"
                 class="form-control"
                 id="duration"
+                name="duration"
                 placeholder="How many hours it will take..."
+                required
               />
             </div>
-            <div class="form-group col-md-6">
-              <label for="cuisine">Cuisine</label>
-              <select id="cuisine" class="form-control custom-select">
-                <option selected>Choose...</option>
-                <option>Indian</option>
-                <option>Italian</option>
-                <option>Cajun</option>
-                <option>Soul</option>
-                <option>Thai</option>
-              </select>
-            </div>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary close-btn"
-          data-dismiss="modal"
-        >
-          Close
-        </button>
-        <button type="button" class="btn btn-default save-recipe">
-          Save Recipe
-        </button>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary close-btn"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+
+          <!-- SAVE RECIPE -->
+          <button type="submit" class="btn btn-default save-recipe">
+            Save Recipe
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+<!-- MODAL END -->
+
 {% endblock %}
+<!-- PYTHON BLOCK END -->
