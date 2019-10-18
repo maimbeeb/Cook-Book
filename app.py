@@ -11,9 +11,10 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/cookbook"
 mongo = PyMongo(app)
 
+# APP ROOT
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-
+# DEFAULT ROUTE - (HOME PAGE ROUTE)
 @app.route('/')
 def home():
     cuisine = ["american", "chinese", "continental", "cuban", "french", "greek", "indian", "indonesian", "italian", "japanese",
@@ -24,9 +25,10 @@ def home():
     recipes = mongo.db.recipe.find()
     return render_template('index.html', recipes=recipes, cuisine=cuisine, category=category)
 
-
-@app.route('/recipe/')
+# INDIVIDUAL RECIPE DETAILS PAGE ROUTE
+@app.route('/recipe', methods=['GET', 'POST'])
 def recipe():
+    # CUISINE LIST
     cuisine = ["american", "chinese", "continental", "cuban", "french", "greek", "indian", "indonesian", "italian", "japanese",
                "korean", "lebanese", "malaysian", "mexican", "pakistani", "russian", "singapore", "spanish", "thai", "tibetan", "vietnamese"]
 
@@ -40,6 +42,7 @@ def recipe():
     recipe = mongo.db.recipe.find({"_id": ObjectId(key)})
     return render_template('recipe.html', recipe=recipe, cuisine=cuisine, category=category)
 
+# SEARCH RECIPE
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     cuisine = ["american", "chinese", "continental", "cuban", "french", "greek", "indian", "indonesian", "italian", "japanese",
@@ -53,8 +56,9 @@ def search():
             {"recipe": {"$regex": recipe_name, "$options": "i"}})
         return render_template('index.html', recipes=recipes, recipe_name=recipe_name, cuisine=cuisine, category=category)
     else:
-        return redirect("/")   
+        return redirect("/")
 
+# REMOVE RECIPE FROM LIST ROUTE
 @app.route("/remove")
 def remove():
     # DELETING A RECIPE WITH VARIOUS REFERENCES
@@ -66,6 +70,7 @@ def remove():
     mongo.db.recipe.remove({"_id": ObjectId(key)})
     return redirect("/")
 
+# ADD NEW RECIPE ROUTE
 @app.route('/addRecipe', methods=['POST'])
 def addRecipe():
     target = os.path.join(APP_ROOT, 'static/recipe/')  # FOLDER PATH
@@ -99,6 +104,7 @@ def addRecipe():
                             "tools": tools, "category": category, "cuisine": cuisine, "duration": duration, "created_date": datetime.now(), "image": rename_img})
     return redirect("/")
 
+# UPDATE RECIPE ROUTE
 @app.route('/updateRecipe', methods=['POST'])
 def updateRecipe():
 
@@ -117,7 +123,10 @@ def updateRecipe():
     # UPDATE RECIPE DETAILS IN COLLECTION
     mongo.db.recipe.update({"_id": ObjectId(request.values.get("id"))}, {"$set": {"recipe": recipe_name, "chef": chef, "description": description, "ingredients": ingredients,
                                                                                   "preparation": preparation, "tools": tools, "category": category, "cuisine": cuisine, "duration": duration, "created_date": datetime.now(), "image": rename_img}})
-    return redirect("/")        
+    return redirect("/")
 
+
+# __main__
 if __name__ == '__main__':
     app.run(debug=True)
+    # app.run(host='0.0.0.0', port=80)
