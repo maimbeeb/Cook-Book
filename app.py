@@ -40,6 +40,18 @@ def recipe():
     recipe = mongo.db.recipe.find({"_id": ObjectId(key)})
     return render_template('recipe.html', recipe=recipe, cuisine=cuisine, category=category)
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    cuisine = ["american", "chinese", "continental", "cuban", "french", "greek", "indian", "indonesian", "italian", "japanese",
+               "korean", "lebanese", "malaysian", "mexican", "pakistani", "russian", "singapore", "spanish", "thai", "tibetan", "vietnamese"]
+
+    category = ["appetizers, beverages", "soups, salads", "vegatables",
+                "main dishes", "breads, rolls", "desserts", "miscellaneous"]
+    
+        return render_template('index.html', cuisine=cuisine, category=category)
+    else:
+        return redirect("/")    
+
 
 if __name__ == '__main__':
     app.run(debug=True)
