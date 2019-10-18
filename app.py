@@ -27,7 +27,18 @@ def home():
 
 @app.route('/recipe/')
 def recipe():
-    return render_template('recipe.html')
+    cuisine = ["american", "chinese", "continental", "cuban", "french", "greek", "indian", "indonesian", "italian", "japanese",
+               "korean", "lebanese", "malaysian", "mexican", "pakistani", "russian", "singapore", "spanish", "thai", "tibetan", "vietnamese"]
+
+    category = ["appetizers, beverages", "soups, salads", "vegatables",
+                "main dishes", "breads, rolls", "desserts", "miscellaneous"]
+
+    # QUERY PARAM RECIPE ID
+    key = request.args.get('recip')
+
+    # RETRIEVE RECIPE FROM COLLECTION
+    recipe = mongo.db.recipe.find({"_id": ObjectId(key)})
+    return render_template('recipe.html', recipe=recipe, cuisine=cuisine, category=category)
 
 
 if __name__ == '__main__':
