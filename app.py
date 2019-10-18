@@ -47,8 +47,13 @@ def search():
 
     category = ["appetizers, beverages", "soups, salads", "vegatables",
                 "main dishes", "breads, rolls", "desserts", "miscellaneous"]
-    
-    return render_template('index.html', cuisine=cuisine, category=category)   
+    recipe_name = request.values.get("recipe")
+    if recipe_name:
+        recipes = mongo.db.recipe.find(
+            {"recipe": {"$regex": recipe_name, "$options": "i"}})
+        return render_template('index.html', recipes=recipes, recipe_name=recipe_name, cuisine=cuisine, category=category)
+    else:
+        return redirect("/")   
 
 
 if __name__ == '__main__':
