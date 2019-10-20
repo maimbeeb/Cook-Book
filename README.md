@@ -173,31 +173,29 @@ Testing
 
 Deployment
 	
-	The source code for this application can be found on Github and the application itself has been deployed onto Heroku. There is no difference between the GitHub code and the code in the live application.
+	The source code for this application can be found on Github and the application 
+	itself has been deployed onto AWS. There is no difference between the GitHub code and 
+	the code in the live application.
 
 	It can be installed with the following steps:
-
-	Download the git repository
 	
-	Sign up/login to Heroku.com
-	From the dashboard click Create New App
-	Enter a unique name and your region and click Create
-	From your command line, enter heroku to ensure heroku is installed (if not installed this can be done with sudo snap install --classic heroku)
-	heroku login
-	Enter your credentials for heroku.com
-	sudo pip3 install Flask
-	sudo pip3 install pymongo
-	sudo pip3 freeze --local > requirements.txt
-	echo web: python run.py > Procfile
-	git add .
-	git commit -m "initial commit"
-	git push -u heroku master
-	heroku ps:scale web=1
-	Make sure to set debug to True.
-	From heroku.com app settings: set config vars to IP : 0.0.0.0, PORT : 5000 and MONGO_URI :mongodb://[username]:[password]@ds129914.mlab.com:29914/online_cookbook, ensuring that you update the username and password accordingly.
-	Click More > Restart all Dynos
-	Application is live at https://your-app-name.herokuapp.com/
-	This application's source code has been modified since the initial deployment - this was to fix a major bug regarding the register functionality, and to also tidy up the indentation of the HTML templates.
+	Sign up/login to AWS Using MobexStorm
+	Enter your credentials for Root User
+	yum install update
+	install java
+	install screen
+	install mongodb i
+	install python3.7 
+	directory permisson changed to copy codebase from local to server 
+	sudo usermod -a -G root
+	chown -v ec2-user  /data/codebase/
+	git clone repositary
+	git pull
+	codebase path : /data/codebase/latest/
+	started in screen 
+	modules:pip install "module-name" 
+	Run :python3.7 app.py
+	application started in http://18.188.85.90:5000 port
 	
 Credits
 	
