@@ -1,13 +1,12 @@
-# Mariam'S Munch – Third milestone project
+# Mariam's Munch – third milestone project
 		
-	Mariam'S Munch as the name reflects is a cooking website that is designed for people who love cooking and 
+	Mariam's Munch as the name reflects is a cooking website that is designed for people who love cooking and 
 	would like to share their experience of cooking in the form of cooking recipes to the world. 
-	Food Lovers and chef can stay connected to the website by contributing, accessing, storing, editing 
+	Food Lovers and chefs can stay connected to the website by contributing, accessing, storing, editing 
 	and deleting their cooking experience online anytime they want. This website has provision to add more 
-	functionalities to provide better experience to the Users.
+	functionalities to provide better experience to the users.
 		
-	So now on No need to buy any more magazines or cook books!. This website provide enormous options, 
-	so Food lovers don't have to eat brocolli or boiled chicken every day. 
+	So from now on there is no need to buy any more magazines or cook books! This website provide enormous options, so food lovers don't have to eat brocolli or boiled chicken every day. 
 	If you have an awesome recipe you want to share? Please dont hesitate to add it to the repository! 
 	If you want to explore a classic dish, Just click a search button in the website.
 		
