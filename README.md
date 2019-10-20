@@ -78,7 +78,9 @@ Technologies Used
 	AWS
 		This application is hosted via AWS
 		
+		
 	Front-End Technologies:
+	
 	HTML
 		This project uses HTML to build the foundation of the web application and includes links to 
 		JS, CSS, and Font Awesome.
@@ -94,7 +96,9 @@ Technologies Used
 	Font Awesome
 		This project uses Font Awesome to provide icons for the application.
 		
+		
 	Back-End Technologies:
+	
 	Python { Version: 3.7.4 }
 		This project uses Python to provide the backend functionality of the cookbook, 
 		including functions to add, edit or delete a recipe.	
@@ -118,7 +122,8 @@ Testing
 
 	1) Manual Tests
 	
-		This web application has been manually tested with different scenarios that the user may experience.
+		This web application has been manually tested with different scenarios 
+		that the user may experience.
 		
 		Homepage
 		Enter the AWS URL it will be directed to homepage.
@@ -131,7 +136,8 @@ Testing
 		
 		View Recipe
 		Click on Image of the Recipe
-		Be directed to the Recipe page and be shown all details of the recipe, including the ingredients, method and image.
+		Be directed to the Recipe page and be shown all details of the recipe, 
+		including the ingredients, method and image.
 		
 		Add Recipe
 		Click on 'ADD RECIPE' button
@@ -157,7 +163,8 @@ Testing
 
 	3) Code Validation
 
-		The HTML, CSS and JavaScript code for this application has been run through and validated by bootstrap with JS.
+		The HTML, CSS and JavaScript code for this application has been run through and 
+		validated by bootstrap with JS.
 
 Deployment
 	
