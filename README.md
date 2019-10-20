@@ -12,32 +12,43 @@
 	If you want to explore a classic dish, Just click a search button in the website.
 		
 UX
+
+![](mockup/home.png)
 	
 	Mariam'S Munch takes on a modern design by implementing features from the bootstrap.css framework.
 	The application was designed to work just as well on devices with small screens as those with larger ones.
 
-	All of the recipes on the home page are displayed on bootstrap cards, each showing a photo of the recipe, the recipe title, description, duration and chef name.
+	All of the recipes on the home page are displayed on bootstrap cards, each showing a photo of the recipe, 
+	the recipe title, description, duration and chef name.
 		
 	Add Recipe
 ![](mockup/add-recipe.png)
 
-		The user is redirected to this page when they would like to add a recipe of their own. On this page their are a number of inputs that the user must fill in, it has intelligent labels and icons to guide the user.
+	The user is redirected to this page when they would like to add a recipe of their own. 
+	On this page their are a number of inputs that the user must fill in, it has intelligent labels and 
+	icons to guide the user.
 
-		The user can be as detailed or as simplistic as they like when entering recipe ingredients. 
-		The user has the option to add as many ingredients (with respective amounts) as they'd like.
-		Similarly, the user can add as many steps in the method as they'd like to describe how to prepare and cook the recipe.
+	The user can be as detailed or as simplistic as they would like to be when entering recipe ingredients. 
+	The user has the option to add as many ingredients (with respective amounts) as they'd like.
+	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
+	and cook the recipe.
 
-		A dropdown for the cuisine chooser and category.
+	A dropdown for the cuisine.
 
 	Edit Recipe
+![](mockup/edit-recipe.png)
 		
-		This page mimics many of the properties of the add recipe page, to help the user identify which fields they would like to update faster.
+	This page mimics many of the properties of the add recipe page, to help the user identify 
+	which fields they would like to update faster.
 
-		If the user wants to save the changes, or discard them, buttons are displayed at the bottom of the page respectively.
+	If the user wants to save the changes, or discard them, buttons are displayed at the 
+	bottom of the page respectively.
 
 	Delete Recipe
 
-		The user also has the option to delete a recipe from the page. To prevent users accidentally deleting recipes, a modal flashes up asking the user to confirm their decision before the recipe is permanently deleted from the database.
+	The user also has the option to delete a recipe from the page. To prevent users accidentally 
+	deleting recipes, a modal flashes up asking the user to confirm their decision before the 
+	recipe is permanently deleted from the database.
 		
 	FEATURES
 	
