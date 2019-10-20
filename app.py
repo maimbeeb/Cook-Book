@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect
+from gevent.pywsgi import WSGIServer
 from flask_pymongo import PyMongo  # PYMONGO
 from bson import ObjectId  # FOR OBJECTID TO WORK
 from werkzeug.utils import secure_filename
@@ -129,4 +130,6 @@ def updateRecipe():
 # __main__
 if __name__ == '__main__':
     # app.run(debug=True)
-    app.run(host='0.0.0.0', port=80)
+    # app.run(host='0.0.0.0', port=80)
+    http_server = WSGIServer(('', 5000), app)
+    http_server.serve_forever()
