@@ -82,10 +82,11 @@ Technologies Used
 	Front-End Technologies:
 	
 	HTML
-		This project uses HTML to build the foundation of the web application and includes links to 
-		JS, CSS, and Font Awesome.
+		This project uses HTML to build the foundation of the web application and 
+		includes links to JS, CSS, and Font Awesome.
 	CSS
-		This project uses CSS to style the features of the web application and each page of the cookbook.
+		This project uses CSS to style the features of the web application and each 
+		page of the cookbook.
 	Bootstrap { Version 4.3.1 - (https://getbootstrap.com/docs/4.3.1/) }
 		This project uses bootstrap for grid layout of the page.
 	JQuery { Version: 3.3.1 }
@@ -103,11 +104,14 @@ Technologies Used
 		This project uses Python to provide the backend functionality of the cookbook, 
 		including functions to add, edit or delete a recipe.	
 	PyMongo { Version: 3.9.0 }
-		This project uses PyMongo which is a MongoDB driver for Python, used to access the MongoDB database.
+		This project uses PyMongo which is a MongoDB driver for Python, used to access 
+		the MongoDB database.
 	JSON
-		This project uses JSON to provide the core data for the cookbook, including recipes, users, categories, etc.
+		This project uses JSON to provide the core data for the cookbook, 
+		including recipes, users, categories, etc.
 	Flask { Version: 1.1.1 }
-		This project uses the Flask microframework to bring the frontend and backend of the application together.
+		This project uses the Flask microframework to bring the frontend and 
+		backend of the application together.
 	MongoDB
 		This project uses MongoDB which is used to contain the database collections.
 	Font Awesome
@@ -115,7 +119,8 @@ Technologies Used
 	Jinja 
 		This project uses to display back-end data to the front-end
 	BSON ObjectId - 
-		This project uses to allow to create and parse ObjectIDs without a reference to the MongoDB or bson modules
+		This project uses to allow to create and parse ObjectIDs without a reference to the 
+		MongoDB or bson modules
 		
 			
 Testing
