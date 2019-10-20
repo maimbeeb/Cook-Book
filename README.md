@@ -51,173 +51,152 @@ UX
 		
 FEATURES
 	
-		Existing features
+	Existing features
 		
-			'COOK-BOOK' - When the URL is entered it will always bring the user to the home page
+	'COOK-BOOK'   - When the URL is entered it will always bring the user to the home page
+	'Add Recipe'  - "Button" when clicked, it will allows the user to add new recipe
+	'Search'      - "Button" when clicked, it will allows user to search recipes by Recipe Name.
+	'Clear'       - "Button" when clicked, it will allows user to clear the Search.
+	'View'        - "Button" when clicked, will bring to individual recipe page
+	'Edit Recipe' - Click on the Image of the particular recipe and make changes by 
+					clicking the "Button".
+	'Remove'      - Click on the Image of the particular recipe and it has button to remove 
+					particular recipe
+	'Back'        - "Button" when clicked, will bring to back to home page from Edit recipe page.
 
-			'Add New Recipe' - "Button" when clicked, it will allows the user to add new recipe
+	Features left to implement
 
-			'Search By Recipe Name' - "Button" when clicked, it will allows user to search recipes by Recipe Name
-
-			'View' - "Button" when clicked, will bring to individual recipe page
-
-			'Edit Recipe' - "Button" allows user to edit particular recipe and make changes
-
-			'Remove' - "Button" allows user to remove particualar recipe
-
-		Features left to implement
-
-			Feature that will allow user remove or edit(make changes) only its own recipes - but not others users recipes.
+	Feature that will allow user remove or edit(make changes) only its own recipes - 
+	but not others users recipes.
 	
 Technologies Used
-	
-		HTML
-			This project uses HTML to build the foundation of the web application and includes links to JS, CSS, and Font Awesome.
-		CSS
-			This project uses CSS to style the features of the web application and each page of the cookbook.
-		JavaScript
-			This project uses JavaScript for interactive functionality of the application.
-		Python
-			This project uses Python to provide the backend functionality of the cookbook, including functions to add, edit or delete a recipe.	
-		PyMongo
-			This project uses PyMongo which is a MongoDB driver for Python, used to access the MongoDB database.
-		JSON
-			This project uses JSON to provide the core data for the cookbook, including recipes, users, categories, etc.
-		Flask
-			This project uses the Flask microframework to bring the frontend and backend of the application together.
-		jQuery
-			This project uses jQuery which is included with bootstrap to initialise many of the bootstrap components used within the application.
-		MongoDB
-			This project uses MongoDB which is used to contain the database collections.
-		Font Awesome
-			This project uses Font Awesome to provide icons for the application.
-			
-	TECHNOLOGIES USED
-	
-		Git - used command line to for regular commits and to push my project to github
-		Github - used to remotely store project code and allow public to see my website
-		Bootstrap 4.3.1 - https://getbootstrap.com/docs/4.3.1/ bootstrap 4.3.1 grid layout of the page;
-		JQuery 3.3.1 - to assist the bootsrap
-		AWS - this application is hosted via AWS
+
+	Git 
+		This project uses command line to for regular commits and to push my project to github
+	Github 
+		This project uses to remotely store project code and allow public to see my website
+	AWS
+		This application is hosted via AWS
 		
-		Front-End Technologies
-		HTML - to create basic structure
-		CSS - to add styles to the websites
+	Front-End Technologies:
+	HTML
+		This project uses HTML to build the foundation of the web application and includes links to 
+		JS, CSS, and Font Awesome.
+	CSS
+		This project uses CSS to style the features of the web application and each page of the cookbook.
+	Bootstrap { Version 4.3.1 - (https://getbootstrap.com/docs/4.3.1/) }
+		This project uses bootstrap for grid layout of the page.
+	JQuery { Version: 3.3.1 }
+		This project uses jQuery which is included with bootstrap to initialise many of the 
+		bootstrap components used within the application.
+	JavaScript
+		This project uses JavaScript for interactive functionality of the application.
+	Font Awesome
+		This project uses Font Awesome to provide icons for the application.
 		
-		Back-End Technologies
+	Back-End Technologies:
+	Python { Version: 3.7.4 }
+		This project uses Python to provide the backend functionality of the cookbook, 
+		including functions to add, edit or delete a recipe.	
+	PyMongo { Version: 3.9.0 }
+		This project uses PyMongo which is a MongoDB driver for Python, used to access the MongoDB database.
+	JSON
+		This project uses JSON to provide the core data for the cookbook, including recipes, users, categories, etc.
+	Flask { Version: 1.1.1 }
+		This project uses the Flask microframework to bring the frontend and backend of the application together.
+	MongoDB
+		This project uses MongoDB which is used to contain the database collections.
+	Font Awesome
+		This project uses Font Awesome to provide icons for the application.
+	Jinja 
+		This project uses to display back-end data to the front-end
+	BSON ObjectId - 
+		This project uses to allow to create and parse ObjectIDs without a reference to the MongoDB or bson modules
 		
-		Flask 1.1.1 - to construct and render templates
-		Python 3.7.4 - used as the backend programming language
-		PyMongo 3.9.0 - used for interacting with MongoDB database from Python
-		Jinja - to display back-end data to the front-end
-		BSON ObjectId - allows you to create and parse ObjectIDs without a reference to the MongoDB or bson modules
 			
 Testing
 
-		Manual Tests
+	1) Manual Tests
+	
 		This web application has been manually tested with different scenarios that the user may experience.
 		
 		Homepage
-
-			Enter the AWS URL it will be directed to 'index.html'.
+		Enter the AWS URL it will be directed to homepage.
 		
-		Recipes by...
-
-			Choose to filter by RecipeName
-				Be directed to appropriate RecipeName depending on whichever filter has been chosen.
+		Filter By Recipes Name
+		Enter the RecipeName Click on 'SEARCH' button, the appropriate Recipe is filtered.
 		
+		Clear the Recipes Name
+		Click on 'CLEAR' button, the search result of the Recipe is cleared.
 		
 		View Recipe
-
-		Click on 'View Recipe'
+		Click on Image of the Recipe
 		Be directed to the Recipe page and be shown all details of the recipe, including the ingredients, method and image.
 		
 		Add Recipe
-
-		Fill in all details in the form and click 'Add Recipe'.
+		Click on 'ADD RECIPE' button
+		Fill in all details in the form and click 'SAVE RECIPE'.
 		Be redirected to the homepage.
 		
 		Edit Recipe
-
-		click on 'Edit Recipe' when viewing a recipe card.
+		click on 'EDIT RECIPE' when viewing a recipe card.
 		Edit any details within the form.
-		Click on 'Update Recipe' and be redirected to 'index.html'.
+		Click on 'SAVE Recipe' and be redirected to homepage.
+		Click on 'Back' and be redirected to homepage.
 		
 		Delete Recipe
-
-		click on 'Delete Recipe' when viewing a recipe card.
+		Click on 'REMOVE' when viewing a recipe card.
+		It will show a pop up to confirm, once confirmed.
 		The recipe will be deleted from the database.
 		Return To Homepage
+	
+	2) Responsiveness Testing
+	
+		This application has been tested on all mobile, tablet and desktop screen sizes with 
+		Google Chrome Developer Tools. From these tests, all issues have been resolved.
 
-		Click on 'Back' and be redirected to 'index.html'.
-		
-		Responsiveness Testing
-		
-		This application has been tested on all mobile, tablet and desktop screen sizes with the Firefox Mozilla Developer Tools and Google Chrome Developer Tools. From these tests, all issues have been resolved.
+	3) Code Validation
 
-		Code Validation
-		
 		The HTML, CSS and JavaScript code for this application has been run through and validated by bootstrap with JS.
-		
-	Testing Procedure
-			
-		
-		Manual Testing
-		
-		used Developer Tools in browser to test smaller view-ports and mobile responsiveness
-		Try to create a new recipe
-		Try to edit/update an existing recipe
-		Try to delete an existing recipe
 
-
-	Deployment
+Deployment
 	
-		The source code for this application can be found on Github and the application itself has been deployed onto Heroku. There is no difference between the GitHub code and the code in the live application.
+	The source code for this application can be found on Github and the application itself has been deployed onto Heroku. There is no difference between the GitHub code and the code in the live application.
 
-		It can be installed with the following steps:
+	It can be installed with the following steps:
 
-		Download the git repository
-		
-		Sign up/login to Heroku.com
-		From the dashboard click Create New App
-		Enter a unique name and your region and click Create
-		From your command line, enter heroku to ensure heroku is installed (if not installed this can be done with sudo snap install --classic heroku)
-		heroku login
-		Enter your credentials for heroku.com
-		sudo pip3 install Flask
-		sudo pip3 install pymongo
-		sudo pip3 freeze --local > requirements.txt
-		echo web: python run.py > Procfile
-		git add .
-		git commit -m "initial commit"
-		git push -u heroku master
-		heroku ps:scale web=1
-		Make sure to set debug to True.
-		From heroku.com app settings: set config vars to IP : 0.0.0.0, PORT : 5000 and MONGO_URI :mongodb://[username]:[password]@ds129914.mlab.com:29914/online_cookbook, ensuring that you update the username and password accordingly.
-		Click More > Restart all Dynos
-		Application is live at https://your-app-name.herokuapp.com/
-		This application's source code has been modified since the initial deployment - this was to fix a major bug regarding the register functionality, and to also tidy up the indentation of the HTML templates.
+	Download the git repository
 	
-	Credits
+	Sign up/login to Heroku.com
+	From the dashboard click Create New App
+	Enter a unique name and your region and click Create
+	From your command line, enter heroku to ensure heroku is installed (if not installed this can be done with sudo snap install --classic heroku)
+	heroku login
+	Enter your credentials for heroku.com
+	sudo pip3 install Flask
+	sudo pip3 install pymongo
+	sudo pip3 freeze --local > requirements.txt
+	echo web: python run.py > Procfile
+	git add .
+	git commit -m "initial commit"
+	git push -u heroku master
+	heroku ps:scale web=1
+	Make sure to set debug to True.
+	From heroku.com app settings: set config vars to IP : 0.0.0.0, PORT : 5000 and MONGO_URI :mongodb://[username]:[password]@ds129914.mlab.com:29914/online_cookbook, ensuring that you update the username and password accordingly.
+	Click More > Restart all Dynos
+	Application is live at https://your-app-name.herokuapp.com/
+	This application's source code has been modified since the initial deployment - this was to fix a major bug regarding the register functionality, and to also tidy up the indentation of the HTML templates.
 	
-		Many times i refered to the python documentation
-		During the project i refered to the flask docs as well which have been a huge help
-		A big thank you to my mentor for planning and helping with the projects
-		A big thanks to tutor support for helping me out with many difficult issues.
-		A tutorial has been taken for learning how to use context varibles and sessions on Youtube
-		Many more resources have been consulted online for advice and python syntax (stackoverflow, pyhton pep8, blogs, etc) so thank you to all the authors!
+Credits
 	
-	Credits
-
+	Referred to the python documentation.
+	Refered to the flask docs as well which have been a huge help.
+	Thanks to mentor for planning and helping with the projects.
+	A tutorial has been taken from Youtube.
+	Many resources have been consulted online (stackoverflow, pyhton pep8, blogs, etc).
 	
-	All recipes on this website are credited to the author accordingly. Most are from the bbc.com food website with some coming from recipe books. All details are indicated where necessary.
+	Acknowledgements
+	
+	This project was based on a brief written by Code Institute to fulfil requirements of their Data 
+	Centric Development module (part of the Full Stack Web Developer course).
 
-	Media
-		All images are from free image websites including www.freeimages.com, www.shutterstock.com and https://pxhere.com. The favicon is from https://www.freefavicon.com
-
-		Acknowledgements
-		This project was based on a brief written by Code Institute to fulfil requirements of their Data Centric Development module (part of the Full Stack Web Developer course).
-
-		I found the Pretty Printed YouTube channel a huge help in learning about Flask sessions and error handling.
-
-		Many thanks also to Chris Zielinski who is my Code Institute mentor, for offering ideas and solutions to various issues throughout the project, as well as endless patience and understanding!
