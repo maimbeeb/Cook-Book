@@ -1,4 +1,4 @@
-# Mariam's Munch – third milestone project
+# My personal cook book
 		
 	Mariam's Munch as the name reflects is a cooking website that is designed for people who love cooking and 
 	would like to share their experience of cooking in the form of cooking recipes to the world. 
