@@ -16,8 +16,7 @@ UX
 	All of the recipes on the home page are displayed on bootstrap cards, each showing a photo of the recipe, the recipe title, description, duration and chef name.
 		
 	Add Recipe
-	
-		![](mockup/add-recipe.png)
+![](mockup/add-recipe.png)
 
 		The user is redirected to this page when they would like to add a recipe of their own. On this page their are a number of inputs that the user must fill in, it has intelligent labels and icons to guide the user.
 
