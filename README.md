@@ -6,19 +6,20 @@
 	and deleting their cooking experience online anytime they want. This website has provision to add more 
 	functionalities to provide better experience to the users.
 		
-	So from now on there is no need to buy any more magazines or cook books! This website provide enormous options, so food lovers don't have to eat brocolli or boiled chicken every day. 
+	So from now on there is no need to buy any more magazines or cook books! This website provide enormous 
+	options, so food lovers don't have to eat brocolli or boiled chicken every day. 
 	If you have an awesome recipe you want to share? Please dont hesitate to add it to the repository! 
-	If you want to explore a classic dish, Just click a search button in the website.
+	If you want to explore a classic dish, just click a "Search Button" in the website.
 		
 UX
 
 ![](mockup/home.png)
 	
-	Mariam'S Munch takes on a modern design by implementing features from the bootstrap.css framework.
+	Mariam's Munch takes on a modern design by implementing features from the bootstrap.css framework.
 	The application was designed to work just as well on devices with small screens as those with larger ones.
 
 	All of the recipes on the home page are displayed on bootstrap cards, each showing a photo of the recipe, 
-	the recipe title, description, duration and chef name.
+	the recipe title, description, duration and chef's name.
 		
 	Add Recipe
 ![](mockup/add-recipe.png)
@@ -32,7 +33,7 @@ UX
 	Similarly, the user can add as many steps in the method as they'd like to describe how to prepare 
 	and cook the recipe.
 
-	A dropdown for the cuisine.
+	A dropdown is provided for the cuisine and the category.
 
 	Edit Recipe
 ![](mockup/edit-recipe.png)
@@ -40,36 +41,35 @@ UX
 	This page mimics many of the properties of the add recipe page, to help the user identify 
 	which fields they would like to update faster.
 
-	If the user wants to save the changes, or discard them, buttons are displayed at the 
-	bottom of the page respectively.
+	If the user wants to save the changes, or discard them, buttons are displayed to guide the user.
 
 	Delete Recipe
 
-	The user also has the option to delete a recipe from the page. To prevent users accidentally 
-	deleting recipes, a modal flashes up asking the user to confirm their decision before the 
+	The user also has the option to delete a recipe from the page, to prevent users accidentally 
+	deleting recipes. An "Alert Popup" flashes asking the user to confirm their decision before the 
 	recipe is permanently deleted from the database.
 		
-	FEATURES
+FEATURES
 	
 		Existing features
 		
-			'COOK-BOOK' == When the URL is entered it will always bring the user to the home page
+			'COOK-BOOK' - When the URL is entered it will always bring the user to the home page
 
-			'Add New Recipe' - button - when clicked, it will allows the user to add new recipe
+			'Add New Recipe' - "Button" when clicked, it will allows the user to add new recipe
 
-			'Search By Recipe Name' - button - when clicked, it will allows user to search recipes by Recipe Name
+			'Search By Recipe Name' - "Button" when clicked, it will allows user to search recipes by Recipe Name
 
-			'View' - button - when clicked, will bring to individual recipe page
+			'View' - "Button" when clicked, will bring to individual recipe page
 
-			'Edit Recipe' - button - allows user to edit particular recipe and make changes
+			'Edit Recipe' - "Button" allows user to edit particular recipe and make changes
 
-			'Remove' - button - allows user to remove particualar recipe
+			'Remove' - "Button" allows user to remove particualar recipe
 
 		Features left to implement
 
 			Feature that will allow user remove or edit(make changes) only its own recipes - but not others users recipes.
 	
-	Technologies Used
+Technologies Used
 	
 		HTML
 			This project uses HTML to build the foundation of the web application and includes links to JS, CSS, and Font Awesome.
@@ -112,7 +112,7 @@ UX
 		Jinja - to display back-end data to the front-end
 		BSON ObjectId - allows you to create and parse ObjectIDs without a reference to the MongoDB or bson modules
 			
-	Testing
+Testing
 
 		Manual Tests
 		This web application has been manually tested with different scenarios that the user may experience.
