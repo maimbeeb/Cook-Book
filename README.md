@@ -11,7 +11,7 @@
 	If you have an awesome recipe you want to share? Please dont hesitate to add it to the repository! 
 	If you want to explore a classic dish, just click a "Search Button" in the website.
 		
-##UX
+## UX
 
 ![](mockup/home.png)
 	
@@ -49,7 +49,7 @@
 	deleting recipes. An "Alert Popup" flashes asking the user to confirm their decision before the 
 	recipe is permanently deleted from the database.
 		
-##FEATURES
+## FEATURES
 	
 	Existing features
 		
@@ -69,7 +69,7 @@
 	Feature that will allow user remove or edit(make changes) only its own recipes - 
 	but not others users recipes.
 	
-##Technologies Used
+## Technologies Used
 
 	Git 
 		This project uses command line to for regular commits and to push my project to github
@@ -123,7 +123,7 @@
 		MongoDB or bson modules
 		
 			
-##Testing
+## Testing
 
 	1) Manual Tests
 	
@@ -171,20 +171,18 @@
 		The HTML, CSS and JavaScript code for this application has been run through and 
 		validated by bootstrap with JS.
 
-##Deployment
+## Deployment
 	
-		The source code for this application can be found on [Github](https://github.com/kimpea/the-cookery-cove) 
-		and the application itself has been deployed onto [Heroku](https://the-cookery-cove.herokuapp.com/). 
-		There is no difference between the GitHub code and the code in the live application. 
+	The source code for this application can be found on [Github](https://github.com/maimbeeb/Cook-Book/) 
+	and the application itself has been deployed onto [Heroku]
+	There is no difference between the GitHub code and the code in the live application. 
 
 	It can be installed with the following steps:
 
 	 - Download the git repository
-	 - Sign up/login to Heroku.com
-	 - From the dashboard click Create New App
-	 - Enter a unique name and your region and click Create
+	 - Install Heroku ToolBelt
 	 - From your command line, enter ```heroku``` to ensure heroku is installed 
-	 (if not installed this can be done with ```sudo snap install --classic heroku```)
+	 
 	    ```
 	    heroku login
 	    ```
@@ -199,19 +197,12 @@
 	    git push -u heroku master
 	    heroku ps:scale web=1
 	    ```
-	 - Make sure to set debug to True.
 	 - From heroku.com app settings: set config vars to IP : 0.0.0.0, PORT : 5000 and 
-	 MONGO_URI :mongodb://[username]:[password]@ds129914.mlab.com:29914/online_cookbook, 
-	 ensuring that you update the username and password accordingly.
-	 - Click More > Restart all Dynos
+	   MONGO_URI :mongodb://[username]:[password]@ds129914.mlab.com:29914/online_cookbook, 
+	   ensuring that you update the username and password accordingly.
 	 - Application is live at https://your-app-name.herokuapp.com/
-
-	This application's source code has been modified since the initial deployment - 
-	this was to fix a major bug regarding the register functionality, and 
-	to also tidy up the indentation of the HTML templates.
-
 	
-##Credits
+## Credits
 	
 	Referred to the python documentation.
 	Refered to the flask docs as well which have been a huge help.
