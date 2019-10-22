@@ -131,5 +131,8 @@ def updateRecipe():
 if __name__ == '__main__':
     # app.run(debug=True)
     # app.run(host='0.0.0.0', port=80)
-    http_server = WSGIServer(('', 5000), app)
-    http_server.serve_forever()
+    # http_server = WSGIServer(('', 5000), app)
+    # http_server.serve_forever()
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT', 7878)),
+            debug=True)
