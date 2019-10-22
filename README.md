@@ -21,7 +21,8 @@
 	All of the recipes on the home page are displayed on bootstrap cards, each showing a photo of the recipe, 
 	the recipe title, description, duration and chef's name.
 		
-	Add Recipe
+### Add Recipe
+
 ![](mockup/add-recipe.png)
 
 	The user is redirected to this page when they would like to add a recipe of their own. 
@@ -35,7 +36,8 @@
 
 	A dropdown is provided for the cuisine and the category.
 
-	Edit Recipe
+### Edit Recipe
+
 ![](mockup/edit-recipe.png)
 		
 	This page mimics many of the properties of the add recipe page, to help the user identify 
@@ -43,7 +45,7 @@
 
 	If the user wants to save the changes, or discard them, buttons are displayed to guide the user.
 
-	Delete Recipe
+### Delete Recipe
 
 	The user also has the option to delete a recipe from the page, to prevent users accidentally 
 	deleting recipes. An "Alert Popup" flashes asking the user to confirm their decision before the 
@@ -173,34 +175,34 @@
 
 ## Deployment
 	
-	The source code for this application can be found on [Github](https://github.com/maimbeeb/Cook-Book/) 
-	and the application itself has been deployed onto [Heroku]
-	There is no difference between the GitHub code and the code in the live application. 
+The source code for this application can be found on [Github](https://github.com/maimbeeb/Cook-Book/) 
+and the application itself has been deployed onto [Heroku]
+There is no difference between the GitHub code and the code in the live application. 
 
-	It can be installed with the following steps:
+It can be installed with the following steps:
 
-	 - Download the git repository
-	 - Install Heroku ToolBelt
-	 - From your command line, enter ```heroku``` to ensure heroku is installed 
-	 
-	    ```
-	    heroku login
-	    ```
-	 - Enter your credentials for heroku.com
-	    ```
-	    sudo pip3 install Flask
-	    sudo pip3 install pymongo
-	    sudo pip3 freeze --local > requirements.txt
-	    echo web: python run.py > Procfile
-	    git add .
-	    git commit -m "initial commit"
-	    git push -u heroku master
-	    heroku ps:scale web=1
-	    ```
-	 - From heroku.com app settings: set config vars to IP : 0.0.0.0, PORT : 5000 and 
-	   MONGO_URI :mongodb://[username]:[password]@ds129914.mlab.com:29914/online_cookbook, 
-	   ensuring that you update the username and password accordingly.
-	 - Application is live at https://your-app-name.herokuapp.com/
+ - Download the git repository
+ - Install Heroku ToolBelt
+ - From your command line, enter ```heroku``` to ensure heroku is installed 
+
+    ```
+    heroku login
+    ```
+ - Enter your credentials for heroku.com
+    ```
+    sudo pip3 install Flask
+    sudo pip3 install pymongo
+    sudo pip3 freeze --local > requirements.txt
+    echo web: python run.py > Procfile
+    git add .
+    git commit -m "initial commit"
+    git push -u heroku master
+    heroku ps:scale web=1
+    ```
+ - From heroku.com app settings: set config vars to IP : 0.0.0.0, PORT : 5000 and 
+   MONGO_URI :mongodb://[username]:[password]@ds129914.mlab.com:29914/online_cookbook, 
+   ensuring that you update the username and password accordingly.
+ - Application is live at https://your-app-name.herokuapp.com/
 	
 ## Credits
 	
