@@ -5,6 +5,7 @@ from bson import ObjectId  # FOR OBJECTID TO WORK
 from werkzeug.utils import secure_filename
 import os
 from datetime import datetime  # DATETIME
+import base64
 
 app = Flask(__name__)
 
@@ -74,18 +75,12 @@ def remove():
 # ADD NEW RECIPE ROUTE
 @app.route('/addRecipe', methods=['POST'])
 def addRecipe():
-    target = os.path.join(APP_ROOT, 'static/recipe/')  # FOLDER PATH
-    if not os.path.isdir(target):
-        os.mkdir(target)     # CREATE FOLDER IF NOT EXITS
     if request.method == 'POST':
         if request.files['image']:
             upload = request.files['image']
-            filename = secure_filename(upload.filename)
-            now = datetime.now()
-            timestamp = datetime.timestamp(now)
-            rename_img = str(timestamp) + "_" + filename
-            destination = "/".join([target, rename_img])
-            upload.save(destination)
+            rv = base64.b64encode(upload.read())  # bytes
+            rv = rv.decode('ascii')
+            rename_img = rv
         else:
             rename_img = ""
 

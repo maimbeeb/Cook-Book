@@ -72,7 +72,7 @@
         <div class="card custom-card">
           <a href="{{ url_for('recipe', recip=recipe['_id']) }}"
             ><img
-              src="../static/recipe/{{ recipe['image'] }}"
+              src="data:image/jpeg;base64,{{ recipe['image'] }}"
               class="card-img-top custom-card-img-top"
               alt="{{ recipe['image'] }}"
           /></a>
