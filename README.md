@@ -1,6 +1,6 @@
 # My personal cook book
 		
-	Mariam's Munch as the name reflects is a cooking website that is designed for people who love cooking and 
+	As the name reflects is a cooking website that is designed for people who love cooking and 
 	would like to share their experience of cooking in the form of cooking recipes to the world. 
 	Food Lovers and chefs can stay connected to the website by contributing, accessing, storing, editing 
 	and deleting their cooking experience online anytime they want. This website has provision to add more 
